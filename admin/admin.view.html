@@ -1,0 +1,30 @@
+<p>Hi {{vm.user.username}}!  <a href="#/login">Logout</a></p>
+
+
+
+<table st-table="rowCollection" class="table table-striped">
+    <thead>
+    <tr>
+        <th>User name</th>
+        <th>First name</th>
+        <th>Last name</th>       
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in vm.allUsers">
+        <td>{{user.username | capitalize}}</td>
+        <td>{{user.firstName | capitalize}}</td>
+        <td>{{user.lastName | capitalize}}</td>                
+        <td>
+            <button class="btn btn-sm" popover-placement="top" popover="{{vm.user.username}}" type="button">
+               Edit
+            </button>          
+        <td>
+            <button type="button" ng-click="vm.deleteUser(user.id)" class="btn btn-sm btn-danger">
+                Delete               
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+

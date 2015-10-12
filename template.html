@@ -1,0 +1,37 @@
+
+<div class="quiz-area" ng-show="inProgress">
+	<div ng-show="!quizOver">
+		<b id="question">{{question}}</b>
+		<ul id="options">
+			<li ng-repeat="option in options">
+				<label>
+					<input type="radio" name="answer" value="{{option}}">
+					{{option}}
+				</label>
+			</li>
+		</ul>
+		<button ng-click="checkAnswer()" ng-show="answerMode">Submit</button>
+
+		<div ng-show="!answerMode">
+			<button ng-click="nextQuestion()" class="next-question">Next</button>
+			<span ng-show="correctAns">That is correct!</span>
+			<span ng-show="!correctAns">Sorry, that is an incorrect answer.</span>
+		</div>
+	</div>
+
+
+	<div ng-show="quizOver">
+	   <h2>Quiz is over</h2>		
+		
+		<input type="button" ng-click="reset()" class="btn btn-sm btn-success" value="Play again">		
+	</div>
+
+	<div id="score">
+		Score: {{score}}
+	</div>
+</div>
+
+<div class="intro" ng-show="!inProgress">
+	<p>Welcome to the QuizApp</p>
+	<input type="button" id="startQuiz" ng-click="start()" class="btn btn-sm btn-warning" value="Start the Quiz">
+</div>

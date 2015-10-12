@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuizApp</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/mainStyle.css" />
+
+<style>
+.panel-heading {
+padding: 10px 15px;
+border-bottom: 1px solid transparent;
+border-top-right-radius: 3px;
+border-top-left-radius: 3px;
+}
+
+</style>
+</head>
+
+<body>
+
+	<!--  <div class="jumbotron">
+  <div class="container">
+    
+     <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>             
+                <div ng-view></div>
+  </div>
+  </div> -->
+
+	
+	<div class="jumbotron" style="background-color:#fff;">
+		<div class="container">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div
+					ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }"
+					ng-if="flash" ng-bind="flash.message"></div>
+				<div ng-view></div>				    
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/angular-cookies.js"></script>
+
+	<script src="app.js"></script>
+	<script src="app-services/authentication.service.js"></script>
+	<script src="app-services/flash.service.js"></script>
+	<script src="app-services/user.service.local-storage.js"></script>
+	<script src="home/home.controller.js"></script>
+	<script src="login/login.controller.js"></script>
+	<script src="register/register.controller.js"></script>
+	<script src="admin/admin.controller.js"></script>
+</body>
+
+</body>
+
+</html>
